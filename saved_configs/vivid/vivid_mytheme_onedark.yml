@@ -1,0 +1,162 @@
+colors:
+  background_color: '363A49'
+  white: 'A8B1C6'
+  red: 'ED5B5B'
+
+  green: '53B68A'
+  green_conf: '53B68A'
+  green_vim: '53B68A'
+
+  yellow: 'FF9C56'
+  yellow_python: 'FF9C56'
+
+
+  blue: '6789FF'
+  blue_md: '7990BF'
+  bg_blue_md: '3F4354'
+
+  purple_tex: '9A69E9'
+  purple_audio: 'F57ABD'
+
+  pink: 'DB60B8'
+  pink_image: '9A69E9'
+  pink_video: 'DB60B8'
+
+  cyan: '4CC1D1'
+  cyan_lua: '4CC1D1'
+
+  black: 'A8B1C6'
+
+  gray: 'A8B1C6'
+  darkgray: 'A8B1C6'
+  darkergray: 'A8B1C6'
+  gray_git: 'A8B1C6'
+
+core:
+  normal_text: {}
+  regular_file: {}
+  reset_to_normal: {}
+
+  directory:
+    foreground: blue
+    font-style: bold
+
+  symlink:
+    foreground: pink
+
+  multi_hard_link: {}
+
+  fifo:
+    foreground: black
+    background: blue
+
+  socket:
+    foreground: black
+    background: pink
+
+  door:
+    foreground: black
+    background: pink
+
+  block_device:
+    foreground: cyan
+    background: darkergray
+
+  character_device:
+    foreground: pink
+    background: darkergray
+
+  broken_symlink:
+    foreground: black
+    background: red
+
+  missing_symlink_target:
+    foreground: black
+    background: red
+
+  setuid: {}
+
+  setgid: {}
+
+  file_with_capability: {}
+
+  sticky_other_writable: {}
+
+  other_writable: {}
+
+  sticky: {}
+
+  executable_file:
+    foreground: red
+    font-style: bold
+
+text:
+  special:
+    foreground: blue_md
+    background: bg_blue_md
+
+  todo:
+    font-style: bold
+
+  licenses:
+    foreground: gray
+
+  configuration:
+    foreground: green_conf
+
+  other:
+    foreground: green_conf
+
+markup:
+  web:
+    foreground: yellow
+  other:
+    foreground: blue_md
+
+programming:
+  source:
+    foreground: green
+    python:
+      foreground: yellow_python
+    ipython:
+      foreground: yellow_python
+    latex:
+      foreground: purple_tex
+      font-style: bold
+    lua:
+      foreground: cyan_lua
+    vim:
+      foreground: green_vim
+
+  tooling:
+    foreground: green
+    vcs:
+      foreground: green
+      git:
+        foreground: gray_git
+
+    continuous-integration:
+      foreground: green
+
+media:
+  foreground: pink
+  image:
+    foreground: pink_image
+  audio:
+    foreground: purple_audio
+  video:
+    foreground: pink_video
+
+office:
+  foreground: red
+
+archives:
+  foreground: cyan
+  font-style: underline
+
+executable:
+  foreground: red
+  font-style: bold
+
+unimportant:
+  foreground: darkgray

@@ -1,0 +1,139 @@
+# -----------------------------------------------------------------------------
+# -- Опции
+# -----------------------------------------------------------------------------
+set adjust-open "best-fit" # Открыть документ в масштабе по ширине страницы
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+set page-padding 1 # расстояние в px между страницами
+# recolor-lightcolor
+# Startup options
+set adjust-open width
+set recolor true
+set sandbox none # отключение песочницы zathura для открытия ссылок в браузере
+
+
+# -----------------------------------------------------------------------------
+# -- Сопоставления
+# -----------------------------------------------------------------------------
+map <C-Space> scroll half-up  # скролить старницу вниз
+map <Space> scroll half-down  # скролить старницу вверх
+map D toggle_page_mode
+map r reload
+map R rotate
+map K zoom in
+map J zoom out
+map i recolor  # перекрасить страницу
+map p print
+# tab
+
+# Настройка для обратного поиска
+set synctex true
+set synctex-editor-command "neovim --remote-silent +%{line} %{input}"
+
+
+# -----------------------------------------------------------------------------
+# -- Оформление Тема Dracula
+# -----------------------------------------------------------------------------
+
+# Шрифт для интерфейса
+set font "JetBrainsMono Nerd Font Bold 9"
+
+set window-title-basename "true"
+set selection-clipboard "clipboard"
+
+
+# my light theme
+set notification-error-bg       "#ffffff" # red
+set notification-error-fg       "#FF5F87" # Foreground
+set notification-warning-bg     "#ffffff" # orange
+set notification-warning-fg     "#FF5F00" # Selection
+# Скопированные текст
+set notification-fg             "#767676"
+set notification-bg             "#c6c6c6"
+
+# Блок подсказок при вводе команд
+set completion-fg               "#C6C6C6"
+set completion-bg               "#ffffff"
+set completion-group-fg         "#767676"
+set completion-group-bg         "#EEEEEE"
+set completion-highlight-fg     "#ffffff"
+set completion-highlight-bg     "#87AFD7"
+
+# Оглавление
+set index-fg                    "#767676"
+set index-bg                    "#ffffff"
+# текущая строка
+set index-active-fg             "#ffffff"
+set index-active-bg             "#87AFD7"
+
+# командная строка
+set inputbar-fg                 "#767676"
+set inputbar-bg                 "#C6C6C6"
+
+# строка статуса
+set statusbar-fg                "#a8a8a8"
+set statusbar-bg                "#eeeeee"
+
+set highlight-color             "#2D4DBD" # выделение поиска, ссылок
+set highlight-active-color      "#A9CDEA" # цвет текущего выбранного элемента
+set highlight-transparency 0.5  # степень прозрачности для этого выделения
+set highlight-fg                "#FFFFFF" # выделение слов поиска, ссылок
+
+set default-fg                  "#AAB7D5"
+set default-bg                  "#ffffff"
+
+set render-loading              true
+set render-loading-fg           "#000000"
+set render-loading-bg           "#ffffff"
+
+# Recolor mode settings
+set recolor-lightcolor          "#ffffff" # Цвет фона темной темы
+set recolor-darkcolor           "#000000" # Цвет текста в темной теме
+
+# # my dark theme
+# set notification-error-bg       "#FF5F87" # red
+# set notification-error-fg       "#ffffff" # Foreground
+# set notification-warning-bg     "#FF5F00" # orange
+# set notification-warning-fg     "#ffffff" # Selection
+# # Скопированные текст
+# set notification-fg             "#B2B2B2"
+# set notification-bg             "#eeeeee"
+#
+# # Блок подсказок при вводе команд
+# set completion-fg               "#C6C6C6"
+# set completion-bg               "#ffffff"
+# set completion-group-fg         "#A8B1C6"
+# set completion-group-bg         "#555C70"
+# set completion-highlight-fg     "#89A4FF"
+# set completion-highlight-bg     "#2D4DBD"
+#
+# # Оглавление
+# set index-fg                    "#A8B2CA"
+# set index-bg                    "#3E4355"
+# # текущая строка
+# set index-active-fg             "#89A4FF"
+# set index-active-bg             "#2D4DBD"
+#
+# # командная строка
+# set inputbar-fg                 "#A0AAC1"
+# set inputbar-bg                 "#5F6579"
+#
+# # строка статуса
+# set statusbar-fg                "#7D8799"
+# set statusbar-bg                "#4A5065"
+#
+# set highlight-color             "#2D4DBD" # выделение поиска, ссылок
+# set highlight-active-color      "#A9CDEA" # цвет текущего выбранного элемента
+# set highlight-transparency 0.5  # степень прозрачности для этого выделения
+# set highlight-fg             "#FFFFFF" # выделение слов поиска, ссылок
+#
+# set default-fg                  "#AAB7D5"
+# set default-bg                  "#363A49"
+#
+# set render-loading              true
+# set render-loading-fg           "#AAB7D5"
+# set render-loading-bg           "#363A49"
+#
+# # Recolor mode settings
+# set recolor-lightcolor          "#363A49" # Цвет фона темной темы
+# set recolor-darkcolor           "#AAB7D5" # Цвет текста в темной теме

@@ -1,0 +1,106 @@
+/*******************************************************************************
+ * ROFI VERTICAL THEME USING THE NORD COLOR PALETTE 
+ * User                 : LR-Tech               
+ * Theme Repo           : https://github.com/lr-tech/rofi-themes-collection
+ * Nord Project Repo    : https://github.com/arcticicestudio/nord
+ *******************************************************************************/
+
+* {
+    font:   "JetBrainsMono Nerd Font ExtraBold 22";
+
+    /* фон, обводка */
+    bg:     #393E4E;
+    border:    #494F64;
+
+    /* текст второстепенный */
+    fg-grey:   #818DA7;
+
+    nord7:     #8fbcbb;
+
+    /* Выбранный */
+    fg-selected: #96AEFF;
+    bg-selected: #2B4AB8;
+
+    gold:    #FDB887;
+    blue:      #5389F0;
+    orange:    #FDB887;
+
+    background-color:   transparent;
+    text-color:         @fg-grey;
+    accent-color:       #2B9266;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+window {
+    background-color:   @bg;
+    border-color:       @border;
+
+    location:   center;
+    width:      800px;
+    y-offset:   -160px;
+    border:     10px;
+}
+
+inputbar {
+    padding:    8px 12px;
+    spacing:    12px;
+    children:   [ prompt, entry ];
+}
+
+prompt, entry, element-text, element-icon {
+    vertical-align: 0.5;
+}
+
+/* текст run */
+prompt {
+    text-color: @gold;
+}
+
+listview {
+    lines:      8;
+    columns:    1;
+
+    fixed-height:   false;
+}
+
+element {
+    padding:    10px 30px;
+    spacing:    15px;
+}
+
+element normal urgent {
+    text-color: @gold;
+}
+
+element normal active {
+    text-color: @gold;
+}
+
+/* текст выбранный элемент */
+element selected {
+    text-color: @fg-selected;
+}
+
+/* фон выбранный элемент */
+element selected normal {
+    background-color:   @bg-selected;
+}
+
+element selected urgent {
+    background-color:   @gold;
+}
+
+element selected active {
+    background-color:   @gold;
+}
+
+element-icon {
+    size:   0.75em;
+}
+
+element-text {
+    text-color: inherit;
+}

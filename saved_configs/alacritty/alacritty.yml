@@ -20,15 +20,21 @@ window:
   decorations: full
   opacity: 1
 
+env:
+  TERM: xterm-256color
 
 
 # -----------------------------------------------------------------------------
-# -- Вставка, копирование ctrl+V, C
+# -- Вставка, копирование <C-V,C>; прерывание процесса <C-S-c>
 # -----------------------------------------------------------------------------
 key_bindings:
   - {key: V, mods: Control, action: Paste}
   - {key: C, mods: Control, action: Copy}
-
+  - {key: C, mods: Control|Shift, chars: "\x03"}
+  - {key: K, mods: Control|Shift, action: ScrollPageUp}
+  - {key: J, mods: Control|Shift, action: ScrollPageDown}
+  - {key: Space, mode: Vi|~Search, action: ScrollHalfPageDown}
+  - {key: Space, mods: Control, mode: Vi|~Search, action: ScrollHalfPageUp}
 
 
 # -----------------------------------------------------------------------------
@@ -56,7 +62,7 @@ font:
     family: "JetBrains Mono Nerd Font"
     style: "Italic"
 
-  size: 10.0 # Размер шрифта
+  size: 9.5 # Размер шрифта
 
   AppleFontSmoothing: true # для экранов с высоким dpi
 
@@ -73,86 +79,165 @@ font:
   draw_bold_text_with_bright_colors: true
 
 
-
 # -----------------------------------------------------------------------------
 # -- Темы
 # -----------------------------------------------------------------------------
-# Темы были взяты отсюда https://github.com/eendroroy/alacritty-theme
+# My Dark
 colors:
   primary:
-    background: '#1f2329'
-    foreground: '#959EAC'
+    background: '#ffffff'
+    foreground: '#767676'
 
-    bright_foreground: '#B3BDD1'
+    bright_foreground: '#eeeeee'
     dim_foreground: '#eff0f1'
-    bright_foreground: '#ffffff'
-    dim_background: '#31363b'
     bright_background: '#000000'
-  cursor:
-    text: '#1f2329'
-    cursor: '#959EAC'
-  vi_mode_cursor:
-    text: '#44475a'
-    cursor: '#50fa7b'
+    dim_background: '#31363b'
+  # cursor:
+  #   text: '#1f2329'
+  #   cursor: '#959EAC'
+  # vi_mode_cursor:
+  #   text: '#44475a'
+  #   cursor: '#50fa7b'
   search:
+    # вхождения поиска
     matches:
-      foreground: '#44475a'
-      background: '#50fa7b'
+      foreground: '#4D4843'
+      background: '#DFB07D'
     focused_match:
-      foreground: '#44475a'
-      background: '#ffb86c'
+      foreground: '#4D4843'
+      background: '#DFB07D'
+  # панель поиска
   footer_bar:
-    background: '#282a36'
-    foreground: '#f8f8f2'
+    background: '#3E4355'
+    foreground: '#AAB7D5'
   hints:
     start:
-      foreground: '#282a36'
-      background: '#f1fa8c'
+      foreground: '#6e8eff'
+      background: '#282a36'
     end:
-      foreground: '#f1fa8c'
+      foreground: '#6e8eff'
       background: '#282a36'
   line_indicator:
-    foreground: '#f1fa8c'
+    foreground: '#6e8eff'
     background: '#282a36'
-  selection:
-    foreground: '#758DB6'
-    background: '#2D343E'
+  # selection:
+  #   foreground: '#758DB6'
+  #   background: '#2D343E'
 
   normal:
-    black:   '#1e2127'
-    red:     '#D14354'
-    green:   '#2B9266'
-    yellow:  '#E39622'
-    blue:    '#5389F0'
-    magenta: '#9165EF'
-    cyan:    '#0FA4B9'
-    white:   '#828791'
+    black:   '#eeeeee' # фона поиска по истории команд и нижней панели в tmux
+    red:     '#FF5F87'
+    green:   '#5FAF5F'
+    yellow:  '#FF5F00'
+    blue:    '#5fafff'
+    magenta: '#875FFF'
+    cyan:    '#00d7ff'
+    white:   '#5A637A' # второстепенные текст при <C-r>
 
   bright:
-    black:   '#363B45'
-    red:     '#D14354'
-    green:   '#2B9265'
-    yellow:  '#E39622'
-    blue:    '#5389F0'
-    magenta: '#9165EF'
-    cyan:    '#0FA4B9'
-    white:   '#828791'
+    black:   '#b2b2b2' # цвет автокомплита
+    red:     '#FF5F87'
+    green:   '#5FAF5F'
+    yellow:  '#FF5F00'
+    blue:    '#5fafff'
+    magenta: '#875FFF'
+    cyan:    '#00d7ff'
+    white:   '#5A637A'
 
   dim:
-    black:   '#1e2127'
-    red:     '#D14354'
-    green:   '#2B9266'
-    yellow:  '#E39622'
-    blue:    '#5389F0'
-    magenta: '#9165EF'
-    cyan:    '#0FA4B9'
-    white:   '#828791'
+    black:   '#b2b2b2' # цвет автокомплита
+    red:     '#FF5F87'
+    green:   '#5FAF5F'
+    yellow:  '#FF5F00'
+    blue:    '#5fafff'
+    magenta: '#875FFF'
+    cyan:    '#00d7ff'
+    white:   '#5A637A'
 
-  # 152 для правильной подстветки двойных скобок
+
+  # 152 для правильной подстветки двойных скобок ipython
   indexed_colors:
-  #  - { index: 28, color: '#D14354' }
+  #  - { index: 28, color: '#FF5F87' }
   #  - { index: 129, color: '#9165EF' }
    - { index: 152, color: '#828791' }
+
+# My Dark
+# colors:
+#   primary:
+#     background: '#363A49'
+#     foreground: '#AAB7D5'
+#
+#     bright_foreground: '#eeeeee'
+#     dim_foreground: '#eff0f1'
+#     bright_background: '#000000'
+#     dim_background: '#31363b'
+#   # cursor:
+#   #   text: '#1f2329'
+#   #   cursor: '#959EAC'
+#   # vi_mode_cursor:
+#   #   text: '#44475a'
+#   #   cursor: '#50fa7b'
+#   search:
+#     # вхождения поиска
+#     matches:
+#       foreground: '#4D4843'
+#       background: '#DFB07D'
+#     focused_match:
+#       foreground: '#4D4843'
+#       background: '#DFB07D'
+#   # панель поиска
+#   footer_bar:
+#     background: '#3E4355'
+#     foreground: '#AAB7D5'
+#   hints:
+#     start:
+#       foreground: '#6e8eff'
+#       background: '#282a36'
+#     end:
+#       foreground: '#6e8eff'
+#       background: '#282a36'
+#   line_indicator:
+#     foreground: '#6e8eff'
+#     background: '#282a36'
+#   # selection:
+#   #   foreground: '#758DB6'
+#   #   background: '#2D343E'
+#
+#   normal:
+#     black:   '#303341' # фона поиска по истории команд и нижней панели в tmux
+#     red:     '#ED5B5B'
+#     green:   '#89bc81'
+#     yellow:  '#F57842'
+#     blue:    '#6E8EFF'
+#     magenta: '#A981FF'
+#     cyan:    '#6DBBE7'
+#     white:   '#5A637A' # второстепенные текст при <C-r>
+#
+#   bright:
+#     black:   '#6E778A' # цвет автокомплита
+#     red:     '#ED5B5B'
+#     green:   '#89bc81'
+#     yellow:  '#F57842'
+#     blue:    '#6E8EFF'
+#     magenta: '#A981FF'
+#     cyan:    '#6DBBE7'
+#     white:   '#828791'
+#
+#   dim:
+#     black:   '#6E778A' # цвет автокомплита
+#     red:     '#ED5B5B'
+#     green:   '#89bc81'
+#     yellow:  '#F57842'
+#     blue:    '#6E8EFF'
+#     magenta: '#A981FF'
+#     cyan:    '#6DBBE7'
+#     white:   '#828791'
+#
+#   # 152 для правильной подстветки двойных скобок ipython
+#   indexed_colors:
+#   #  - { index: 28, color: '#D14354' }
+#   #  - { index: 129, color: '#9165EF' }
+#    - { index: 152, color: '#828791' }
 
 #Цвета (gruvbox-material) 
 # colors:

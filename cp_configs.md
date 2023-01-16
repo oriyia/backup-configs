@@ -6,6 +6,8 @@
 /home/oriyia/.Xmodmap
 /home/oriyia/.xprofile
 /home/oriyia/.Xresources
+/home/oriyia/.zshrc
+
 
 Alacritty
 /home/oriyia/.config/alacritty/alacritty.yml

@@ -1,0 +1,13 @@
+remove shift = Shift_R
+remove mod1 = Alt_R
+remove control = Control_L
+remove mod4 = Super_L
+keysym Control_L = Super_L
+keysym Super_L = Control_L
+keysym Shift_R = Alt_R
+keysym Alt_R = Shift_R
+add mod4 = Super_L
+add control = Control_L
+add mod1 = Alt_R
+add shift = Shift_R
+

@@ -33,6 +33,7 @@ declare -A list_directories=(
 ["lsd_themes"]="/home/oriyia/.config/lsd/themes/lsd_theme.yaml"
 ["vivid"]="/home/oriyia/.config/vivid/vivid_mytheme_onedark.yml")
 
+mkdir "${PWD}/saved_configs/" &> /dev/null
 target="${PWD}/saved_configs/"
 
 for key in "${!list_directories[@]}"

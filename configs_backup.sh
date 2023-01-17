@@ -36,25 +36,29 @@ declare -A list_directories=(
 mkdir "${PWD}/saved_configs/" &> /dev/null
 target="${PWD}/saved_configs/"
 
-for key in "${!list_directories[@]}"
-do
-    if [[ -d ${list_directories[$key]} ]]
-    then
-        if cp -aT "${list_directories[$key]}" "${target}${key}"
+copying_files()
+{
+    for key in "${!list_directories[@]}"
+    do
+        if [[ -d ${list_directories[$key]} ]]
         then
-            echo "+++++ ${key}" >> results.txt
+            if cp -aT "${list_directories[$key]}" "${target}${key}"
+            then
+                echo "+++++ ${key}" >> results.txt
+            else
+                echo "----- ${key}" >> results.txt
+            fi
         else
-            echo "----- ${key}" >> results.txt
+            mkdir "${target}${key}/" &> /dev/null
+            if cp -a "${list_directories[$key]}" "${target}${key}/"
+            then
+                echo "+++++++ ${key}" >> results.txt
+            else
+                echo "---------- ${key}" >> results.txt
+            fi
         fi
-    else
-        mkdir "${target}${key}/" &> /dev/null
-        if cp -a "${list_directories[$key]}" "${target}${key}/"
-        then
-            echo "+++++++ ${key}" >> results.txt
-        else
-            echo "---------- ${key}" >> results.txt
-        fi
-    fi
-done
+    done
+}
 
+copying_files
 echo -e "\n${itog}" >> results.txt
